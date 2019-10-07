@@ -1,7 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-
+      <form>
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input type="email" id="email" ngModel name="email" required email class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="subscription">Choose a Subscription</label>
+          <select id="subscription" name="subscription" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" ngModel name="password" required class="form-control"
+            #password="ngModel">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
     </div>
   </div>
 </div>
