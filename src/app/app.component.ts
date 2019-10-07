@@ -6,4 +6,9 @@ import { NgForm } from "@angular/forms";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {}
+export class AppComponent {
+  @ViewChild("signupForm", { static: false }) sgnForm: NgForm;
+  onSubmit() {
+    console.log(this.sgnForm);
+  }
+}
