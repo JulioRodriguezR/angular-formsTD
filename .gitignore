@@ -9,7 +9,6 @@ app/**/*.js
 app/**/*.js.map
 # dependencies
 /node_modules
-/e2e
 
 # IDEs and editors
 /.idea
