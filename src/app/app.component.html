@@ -2,6 +2,27 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input type="email" id="email" ngModel name="email" required email class="form-control" #email="ngModel">
+          <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email!</span>
+        </div>
+        <div class="form-group">
+          <label for="subscription">Choose a Subscription</label>
+          <select id="subscription" [ngModel]="defaultSub" name="subscription" class="form-control">
+            <option *ngFor="let sub of subs" [value]="sub">{{ sub }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" ngModel name="password" required class="form-control"
+            #password="ngModel">
+          <span class="help-block" *ngIf="!password.valid && password.touched">
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">Submit</button>
+      </form>
+
     </div>
   </div>
 </div>
